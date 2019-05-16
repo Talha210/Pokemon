@@ -1,0 +1,29 @@
+body {
+  background-color: rgb(156, 145, 163);
+  height: 50%;
+}
+
+
+ img {
+  background-color: black;
+  height: 300px;
+  width: 40%;
+  /* padding-top: 10%; */
+  padding: 30%;
+  padding-bottom: 20%;
+  /* padding-left: 30%; */
+}
+
+#button:hover {
+    background-color: white;
+    background-repeat:no-repeat;
+    border: white;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+
+.top-section {
+  height: 600px;
+  width: 100%;
+}
