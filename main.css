@@ -1,13 +1,13 @@
 body {
-  background-color: rgb(156, 145, 163);
+  background-color: black;
   height: 50%;
 }
 
 
  img {
   background-color: black;
-  height: 300px;
-  width: 40%;
+  height: 100%;
+  width: 50%;
   /* padding-top: 10%; */
   padding: 30%;
   padding-bottom: 20%;
