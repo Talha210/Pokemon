@@ -1,44 +1,49 @@
-function openNav() {
-  document.getElementById("mySidebar").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
-}
+// function openNav() {
+//   document.getElementById("mySidebar").style.width = "250px";
+//   document.getElementById("main").style.marginLeft = "250px";
+// }
+//
+// function closeNav() {
+//   document.getElementById("mySidebar").style.width = "0";
+//   document.getElementById("main").style.marginLeft= "0";
+// }
 
-function closeNav() {
-  document.getElementById("mySidebar").style.width = "0";
-  document.getElementById("main").style.marginLeft= "0";
-}
 
-
-requestAPI = () => {
+requestAPI = (pokemon) => {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             let data = JSON.parse(this.responseText)
-            user = {
-           // a: data["form"][]
-           x: data["abilities"][0]["ability"]["name"],
-           y: data["abilities"][1]["ability"]["name"],
-           c: data["stats"][0]["base_stat"],
-           p: data["types"][0]["type"],
-           t: data["abilities"][1]["base_experience"]
+            poke = {
+          name: data["name"],
+           hp: data["stats"][2]["base_stat"],
+           attack: data["stats"][0]["base_stat"],
+           defense: data["stats"][0]["base_stat"],
+           abilities: data["abilities"][0]["ability"]["name"],
+
          }
 
 
-
-            // user = {
-            //     name: data['name'],
-            //     username: data['login'],
-            //     image: data['avatar_url'],
-            //     repo_count: data['public_repos'],
-            //     followers: data['followers']
-            // }
+        console.log(poke);
         }
     };
-    xhttp.open("GET", "https://pokeapi.co/api/v2/pokemon/nidorina", true);
+    xhttp.open("GET", `https://pokeapi.co/api/v2/pokemon/${pokemon}`, true);
     xhttp.send();
 }
 
-requestAPI()
+
+
+class Pokemon {
+  constructor(hp, attack, defense, abilities) {
+  	this.hp = hp;
+    this.attack = attack;
+    this.defense = defense;
+  	this.abilities = abilities;
+  }
+}
+
+
+
 
 displayUser = () => {
     let cont = document.createElement('div')
@@ -54,3 +59,9 @@ displayUser = () => {
     cont.appendChild(img)
     document.body.appendChild(cont)
 }
+
+// You are going to use this link
+// https://raw.githubusercontent.com/bemsuero/test-repo/master/test_json.json
+// and an AJAX call to display your own information on a web page. Use the Lemon framework to create the grid.
+// https://appalaszynski.github.io/lemon/#
+// //
