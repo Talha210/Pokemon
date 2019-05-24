@@ -42,6 +42,13 @@ class Pokemon {
   }
 }
 
+class Trainer {
+    constructor() {
+        this.poke = []
+    }
+    this.poke.push(poke)
+
+}
 
 
 
