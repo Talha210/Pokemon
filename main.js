@@ -44,10 +44,16 @@ class Pokemon {
 
 class Trainer {
     constructor() {
-        this.poke = []
+        this.pokedex = []
     }
-    this.poke.push(poke)
+    get(name){
 
+    }
+
+    all(){
+      
+    }
+    this.pokemon.push(pokemon)
 }
 
 
